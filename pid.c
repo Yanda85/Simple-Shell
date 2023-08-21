@@ -8,9 +8,9 @@
 
 int main(void)
 {
-  pid_t pid;
+  pid_t our_pid;
 
 pid = getpid();
-printf("%u\n", pid);
+printf("%u\n", our_pid);
 return (0);
 }
