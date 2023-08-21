@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * Builtins - Check for built in commands
- * @av: check Argument 
+ * checkBuiltins - the Check for built in commands
+ * @av: check the Argument 
  * @buff: buffer
  * @count: count
  * Return: 0 success, 1 not found
@@ -40,7 +40,7 @@ int checkBuiltins(char **av, char *buff, int count)
 }
 
 /**
- * printenv - Print the environnment
+ * printenv - Printing the environnment
  *
  * Return: Void
  */
