@@ -10,7 +10,7 @@ int main(void)
 {
   pid_t our_pid;
 
-pid = getpid();
+our_pid = getpid();
 printf("%u\n", our_pid);
 return (0);
 }
