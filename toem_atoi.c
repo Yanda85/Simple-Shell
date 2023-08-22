@@ -55,5 +55,6 @@ if (j == -1)
   result = -atoi;
 else
   result = atoi;
+  
 return (result);
 }
