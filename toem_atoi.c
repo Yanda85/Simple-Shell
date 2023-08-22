@@ -13,7 +13,7 @@ int interactive(info_t *info)
 
 /**
 * is_delim - checks for delimiter
-* @char: character to be checked
+* @c: character to be checked
 * @delim: the string to be used
 * Return: 1 if successful and 0 if not
 */
