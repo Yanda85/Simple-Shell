@@ -1,72 +1,75 @@
 #include "shell.h"
 
 /**
-* _strlen - checks a string's length
-* @str: the string to be used
-* Return: string length
-*/
-
-int _strlen(char *str)
+ * _strlen - returns the length of a string
+ * @s: the string on which length to check
+ *
+ * Return:the  integer length of string
+ */
+int _strlen(char *s)
 {
-  int i = 0;
+	int i = 0;
 
-if (!str)
-  return (0);
-while (*str++)
-  i++;
-return (i);
+	if (!s)
+		return (0);
+
+	while (*s++)
+		i++;
+	return (i);
 }
 
 /**
-* _strcmp - compares two strings
-* @str1: first string to be used
-* @str2: second string to be used
-* Return: 1 if the strings are the same
-*/
-
-int _strcmp(char *str1, char *str2)
+ * _strcmp - performs editing on comparison of two strangs.
+ * @s1: the first strang
+ * @s2: the second strang
+ *
+ * Return: negative on s1 < s2, positive on s1 > s2, zero on s1 == s2
+ */
+int _strcmp(char *s1, char *s2)
 {
-  while (*str1 && *str2)
-{
-if (*str1 != *str2))
-  return (*str1 - *str2);
-str1++;
-str2++;
-}
-if (*str1 == *str2)
-  return (0);
-else
-  return (*str1 < *str2 ? -1 : 1);
-}
-
-/**
-* starts_with - checks letters in a string
-* @letter: string to search
-* @str: string to find
-* Return: address of letter or NULL
-*/
-
-char *starts_with(const char *letter, const char *str)
-{
-  while (*str)
-    if (*str++ != *letter++)
-      return (NULL);
-return ((char *)letter);
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	if (*s1 == *s2)
+		return (0);
+	else
+		return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
-* _strcat - concatenates strings
-* @dest: destination string
-* @src: source string
-*/
+ * starts_with - ensure that the  needle starts with haystack
+ * @haystack: string to look for
+ * @needle: the substring to get
+ *
+ * Return: it address  next chararacter in haystack or NULL
+ */
+char *starts_with(const char *haystack, const char *needle)
+{
+	while (*needle)
+		if (*needle++ != *haystack++)
+			return (NULL);
+	return ((char *)haystack);
+}
 
+/**
+ * _strcat - links two strings
+ * @dest: the destination of  buffer
+ * @src:  source the buffer
+ *
+ * Return: the pointer to destination buffer
+ */
 char *_strcat(char *dest, char *src)
 {
-  char *result = dest;
-while (*dest)
-  dest++;
-while (*src)
-  *dest++ = *src++;
-*dest = *src;
-return (result);
+	char *ret = dest;
+
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (ret);
 }
