@@ -36,7 +36,7 @@ return (0);
 int _isalpha(int c)
 {
   if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    return (0);
+    return (1);
 else
     return (0);
 }
@@ -49,7 +49,7 @@ else
 
 int _atoi(char *c)
 {
-  int i, j = 1, k = 0, result;
+  int i, j = 1, k = 0, result = 0;
 unsigned int atoi = 0;
 
 for (i = 0; c[i] != '\0' && k != 2; i++)
@@ -62,10 +62,10 @@ k = 1;
   atoi *= 10;
   atoi += (c[i] - '0');
 }
-else if (k = = 1)
+else if (k == 1)
     k = 2;
 }
-if (j == -)
+if (j == -1)
   result = -atoi;
 else
   result = atoi;
