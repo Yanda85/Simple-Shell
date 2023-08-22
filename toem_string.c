@@ -51,3 +51,22 @@ char *starts_with(const char *letter, const char *str)
   while (*str)
     if (*str++ != *letter++)
       return (NULL);
+return ((char *)letter);
+}
+
+/**
+* _strcat - concatenates strings
+* @dest: destination string
+* @src: source string
+*/
+
+char *_strcat(char *dest, char *src)
+{
+  char *result = dest;
+while (*dest)
+  dest++;
+while (*src)
+  *dest++ = *src++;
+*dest = *src;
+return (result);
+}
