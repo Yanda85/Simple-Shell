@@ -33,5 +33,21 @@ if (*str1 != *str2))
 str1++;
 str2++;
 }
+if (*str1 == *str2)
+  return (0);
+else
+  return (*str1 < *str2 ? -1 : 1);
+}
 
-    
+/**
+* starts_with - checks letters in a string
+* @letter: string to search
+* @str: string to find
+* Return: address of letter or NULL
+*/
+
+char *starts_with(const char *letter, const char *str)
+{
+  while (*str)
+    if (*str++ != *letter++)
+      return (NULL);
