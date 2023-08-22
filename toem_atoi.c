@@ -28,20 +28,6 @@ if (*delim++ == c)
 return (0);
 
 /**
-* _isalpha - checks if a character is an alphabet
-* @c: character to be checked
-* Return: 1 if successful and 0 if not
-*/
-
-int _isalpha(int c)
-{
-  if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    return (1);
-else
-    return (0);
-}
-
-/**
 * _atoi - converts a string argument to an interger
 * @c: character to be used
 * Return: 1 if successful, 0 if unsuccessful
