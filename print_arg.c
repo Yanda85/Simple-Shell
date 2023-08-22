@@ -6,7 +6,7 @@
 * @av: array of strings (arguments)
 */
 
-it main(int ac, char **av)
+int main(int ac, char **av)
 {
   int index;
 
