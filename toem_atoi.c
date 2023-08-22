@@ -18,7 +18,7 @@ int interactive(info_t *info)
 * Return: 1 if successful and 0 if not
 */
 
-int is_ddelim(char c, char *delim)
+int is_delim(char c, char *delim)
 {
   while (*delim)
 {
@@ -49,15 +49,25 @@ else
 
 int _atoi(char *c)
 {
-  int atoi = 0;
-int i = 0;
+  int i, j = 1, k = 0, result;
+usigned int atoi = 0;
 
-if (str[i] == '-')
-  i++;
-
-while (str[i] >= '0' && str[i] <= '9')
+for (i = 0; c[i] != '\0' && k != 2; i++)
 {
-atoi = atoi * 10 + (str[i] - '0');
-i++;
+if (c[i] == '-')
+  j *= -1;
+if (c[i] >= '0' && c[i] <= '9')
+{
+k = 1;
+  atoi *= 10;
+  atoi += (c[i] - '0');
 }
+  else if (k = = 1)
+    k = 2;
+}
+if (j == -)
+  result = -atoi;
+else
+  result = atoi;
 return (result);
+}
