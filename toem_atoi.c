@@ -62,7 +62,7 @@ k = 1;
   atoi *= 10;
   atoi += (c[i] - '0');
 }
-  else if (k = = 1)
+else if (k = = 1)
     k = 2;
 }
 if (j == -)
