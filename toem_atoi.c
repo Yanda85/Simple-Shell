@@ -50,7 +50,7 @@ else
 int _atoi(char *c)
 {
   int i, j = 1, k = 0, result;
-usigned int atoi = 0;
+unsigned int atoi = 0;
 
 for (i = 0; c[i] != '\0' && k != 2; i++)
 {
