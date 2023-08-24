@@ -180,12 +180,15 @@ int _myhelp(info_t *info);
 
 /* toem_builtin1.c */
 int _myhistory(info_t *info);
+int unset_alias(info_t *info, char *str);
+int set_alias(info_t *info, char *str);
+int print_alias(list_t *node);
 int _myalias(info_t *info);
 
 /*toem_getline.c */
-ssize_t input_buf(info_t *info, char **buf, size_t *len)
+ssize_t input_buf(info_t *info, char **buf, size_t *len);
 ssize_t get_input(info_t *info);
-ssize_t read_buf(info_t *info, char *buf, size_t *i)
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
 int _getline(info_t *info, char **ptr, size_t *length);
 void sigintHandler(int sig_num);
 
