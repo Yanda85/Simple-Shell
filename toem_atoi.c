@@ -45,30 +45,30 @@ int _isalpha(int c)
  * Return: 0 if no numbers on a string, converted number if different
  */
 
-int _atoi(char *s)
+int _atoi(char *c)
 {
 	int i, sign = 1, flag = 0, output;
-	unsigned int result = 0;
+	unsigned int atoi = 0;
 
-	for (i = 0; s[i] != '\0' && flag != 2; i++)
+	for (i = 0;c[i] != '\0' && flag != 2; i++)
 	{
-		if (s[i] == '-')
+		if (c[i] == '-')
 			sign *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (c[i] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
-			result *= 10;
-			result += (s[i] - '0');
+			atoi *= 10;
+			atoi += (c[i] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;
 	}
 
 	if (sign == -1)
-		output = -result;
+		output = -atoi;
 	else
-		output = result;
+		output = atoi;
 
 	return (output);
 }
