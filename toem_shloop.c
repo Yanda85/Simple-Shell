@@ -51,7 +51,7 @@ return (sh_builtin);
 
 int find_builtin(info_t *info)
 {
-  int i; built_in = -1;
+  int i, built_in = -1;
 builtin_table builtintbl[] = {
 {"exit", _myexit}'
 {"env", _myenv},
@@ -74,3 +74,42 @@ return (built_in);
 }
 
 /** 
+* find_cmd - searches PATH 
+* @info: info structure
+* Return: nothing
+  */
+
+void find_cmd(info_t *info)
+{
+  char *path = NULL;
+int i, j;
+
+info->path = info->argv[0];
+if (info->linecount_flag == 1)
+{
+info->line_count++;
+info->linecount_flag = 0;
+}
+for (i = 0; j = 0; info->arg[i]; i++)
+if (!is_delim(info->arg[i], "\t\n"))
+  j++;
+if (!j)
+  return;
+
+path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
+if (path)
+{
+info->path = path;
+fork_cmd(info);
+}
+else
+{
+if ((interactive(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
+  fork_cmd(info);
+else if (*(info->arg) != '\n')
+{
+info->status = 127;
+print_error(info, "not found\n");
+}
+}
+}
