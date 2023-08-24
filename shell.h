@@ -132,10 +132,10 @@ int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
 /* toem_string.c */
-int _strlen(char *);
-int _strcmp(char *, char *);
-char *starts_with(const char *, const char *);
-char *_strcat(char *, char *);
+int _strlen(char *str);
+int _strcmp(char *str1, char *str2);
+char *starts_with(const char *str, const char *letter);
+char *_strcat(char *dest, char *src);
 
 /* toem_string1.c */
 char *_strcpy(char *, char *);
