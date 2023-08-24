@@ -179,8 +179,8 @@ int _mycd(info_t *info);
 int _myhelp(info_t *info);
 
 /* toem_builtin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int _myhistory(info_t *info);
+int _myalias(info_t *info);
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
